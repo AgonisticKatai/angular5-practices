@@ -1,0 +1,21 @@
+<form [formGroup]="operationForm" (ngSubmit)="handleSubmit()">
+  <fieldset>
+    <div>
+      <label for="date">Date</label>
+      <input type="date" formControlName="date">
+    </div>
+    <div>
+      <label for="amount">Amount</label>
+      <input type="number" formControlName="amount">
+    </div>
+    <div>
+      <label for="operationType">Operation Type</label>
+      <input type="number" formControlName="operationType">
+    </div>
+  </fieldset>
+  <button type="submit" [disabled]="!operationForm.valid">Submit</button>
+</form>
+<ul>
+  <li>{{ operationForm.value | json }}</li>
+  <li>{{ operationForm.valid | json }}</li>
+</ul>
