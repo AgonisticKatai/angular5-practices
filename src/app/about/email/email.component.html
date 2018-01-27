@@ -1,4 +1,4 @@
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()"  >
+<form [formGroup]="messageForm" (ngSubmit)="handleSubmit()"  >
   <fieldset>
     <div>
       <label for="sender">Sender</label>
@@ -13,8 +13,10 @@
       <input type="text" formControlName="body">
     </div>
   </fieldset>
+  <button type="submit" [disabled]="!messageForm.valid">Submit</button>
 </form>
 <ul>
   <li>{{ messageForm.value | json }}</li>
+  <li>{{ messageForm.valid | json }}</li>
 </ul>
 

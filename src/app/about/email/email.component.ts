@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms/src/model';
 
 @Component({
@@ -18,14 +18,14 @@ export class EmailComponent implements OnInit {
 
   buildForm() {
     this.messageForm = this.formBuilder.group({
-      sender: [[]],
-      subject: [[]],
-      body: [[]]
+      sender: ['Nacho', Validators.required],
+      subject: ['', Validators.required],
+      body: ['']
     });
   }
 
   handleSubmit() {
-    console.log(this.messageForm.value)
+    console.log(this.messageForm.value);
   }
 
 }
