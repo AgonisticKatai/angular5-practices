@@ -1,0 +1,20 @@
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()"  >
+  <fieldset>
+    <div>
+      <label for="sender">Sender</label>
+      <input type="email" formControlName="sender">
+    </div>
+    <div>
+      <label for="subject">Subject</label>
+      <input type="text" formControlName="subject">
+    </div>
+    <div>
+      <label for="body">Body</label>
+      <input type="text" formControlName="body">
+    </div>
+  </fieldset>
+</form>
+<ul>
+  <li>{{ messageForm.value | json }}</li>
+</ul>
+
